@@ -66,13 +66,13 @@ def login_doctor():
         else:
             return jsonify('Incorrect username/password!')
  
-    return "User logged in successfully!"
+    return "User Logged in successfully!"
 
 
 @app.route("/logout")
 def logout_doctor():
     session.clear()
-    return jsonify("User logged out!")
+    return jsonify("You're logged out!")
 
 
 
