@@ -1,1 +1,1 @@
-print ("Hello World - Sub-main branch")
+print ("Hello World")
