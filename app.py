@@ -15,6 +15,9 @@ mysql = MySQL(app)
 
 @app.route('/')
 def index():
+    return render_template("welcome.html")
+    return ("Welcome Page")
+
     cur = mysql.connection.cursor()
     cur.execute('''SELECT * FROM doctorlist''')
     result = cur.fetchall()
@@ -45,7 +48,7 @@ def specific_doctor(id):
         if doctor is not None:
             return jsonify(doctor), 200
         else:
-            return "Something went wrong", 404
+            return "Enter number less than 8 (Exceeding doctor limit!!!)", 404
 
 
 
@@ -64,7 +67,7 @@ def login_doctor():
             session['email'] = user['email']
             return jsonify('User Logged in successfully!')
         else:
-            return jsonify('Incorrect username/password!')
+            return jsonify('Incorrect username or password!')
  
     return "User Logged in successfully!"
 
